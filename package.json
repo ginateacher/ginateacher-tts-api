@@ -1,0 +1,9 @@
+{
+  "name": "ginateacher-tts-api",
+  "version": "1.0.0",
+  "main": "api/tts.js",
+  "type": "commonjs",
+  "dependencies": {
+    "@google-cloud/text-to-speech": "^4.2.0"
+  }
+}
