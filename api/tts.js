@@ -1,7 +1,8 @@
 const textToSpeech = require('@google-cloud/text-to-speech');
 
-// 讀取環境變數中的 JSON 金鑰
-const key = JSON.parse(process.env.GOOGLE_TTS_KEY_JSON);
+const raw = process.env.GOOGLE_TTS_KEY_JSON.replace(/\\n/g, '\n'); // 修正 private_key 的換行
+const key = JSON.parse(raw);
+
 const client = new textToSpeech.TextToSpeechClient({ credentials: key });
 
 module.exports = async (req, res) => {
